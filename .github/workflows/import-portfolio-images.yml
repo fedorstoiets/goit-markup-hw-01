@@ -1,0 +1,34 @@
+name: Import WebStudio portfolio JPGs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/import-portfolio-images.yml"
+permissions:
+  contents: write
+jobs:
+  import-images:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download six images from WebStudio reference
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p images
+          for i in 1 2 3 4 5 6; do
+            curl -fL --retry 3 --silent --show-error \
+              "https://raw.githubusercontent.com/Obolonska/goit-markup-hw-05/main/images/our-portfolio-${i}.jpg" \
+              -o "images/our-portfolio-${i}.jpg"
+            test -s "images/our-portfolio-${i}.jpg"
+            file "images/our-portfolio-${i}.jpg" | grep -qi jpeg
+          done
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/our-portfolio-*.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: add six WebStudio portfolio JPG images"
+            git push
+          fi
