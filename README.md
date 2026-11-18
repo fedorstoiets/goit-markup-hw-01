@@ -1,6 +1,6 @@
 # WebStudio — HTML Homework #1
 
-A single-page website built for **GoIT HTML & CSS, Module 1: HTML Basics**. The page follows the WebStudio design and uses semantic HTML without CSS styling.
+A single-page website built for **GoIT HTML & CSS, Module 1: HTML Basics**. The page uses semantic HTML without CSS styling and contains the three required main sections: Hero, Features, and Team.
 
 ## Live demo
 
@@ -12,7 +12,6 @@ A single-page website built for **GoIT HTML & CSS, Module 1: HTML Basics**. The 
 - **Hero** — main headline and “Order Service” button
 - **Our Features** — four feature descriptions
 - **Our Team** — four team members with JPG photographs
-- **Our Portfolio** — six project examples with JPG images
 - **Footer** — text logo and company description
 
 ## Technologies
@@ -32,12 +31,7 @@ goit-markup-hw-01/
 │   ├── team-2.jpg
 │   ├── team-3.jpg
 │   ├── team-4.jpg
-│   ├── our-portfolio-1.jpg
-│   ├── our-portfolio-2.jpg
-│   ├── our-portfolio-3.jpg
-│   ├── our-portfolio-4.jpg
-│   ├── our-portfolio-5.jpg
-│   └── our-portfolio-6.jpg
+│   └── our-portfolio-1.jpg ... our-portfolio-6.jpg (unused assets)
 ├── index.html
 └── README.md
 ```
